@@ -14,7 +14,7 @@ import entities.Book;
 @LocalBean
 public class BookEJB implements BookEJBRemote {
 
-	@PersistenceContext(unitName = "chapter06PU")
+	@PersistenceContext(unitName = "myRefDB")
 	private EntityManager em;
 
 	@Override
