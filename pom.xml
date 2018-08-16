@@ -19,6 +19,16 @@
 		</plugin>
 	</plugins>
   </build>
+  <profiles>
+  	<profile>
+  		<id>tomee</id>
+  		<modules>
+  			<module>micEJB</module>
+  			<module>micWEB</module>
+  		</modules>
+  	</profile>
+  </profiles>
+
   <modules>
   	<module>micEJB</module>
   	<module>micWEB</module>
