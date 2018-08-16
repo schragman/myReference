@@ -26,7 +26,7 @@
 		    			<version>2.2</version>
 		    			<configuration>
 		        			<warName>ReferenceII</warName>
-		        			<outputDirectory>/Applications/apache-tomee-plume-7.0.2/webapps</outputDirectory>
+		        			<outputDirectory>${catHome}/webapps</outputDirectory>
 		    			</configuration>
 		  		</plugin>
 		  	</plugins>
