@@ -17,5 +17,12 @@
 		<p/>
 		<h:outputText value="#{homeForm.beispielWert}" />
 		<p/>
+		<h:form>
+			<h:commandLink value="Create Book"
+								actionListener="#{homeForm.doCreateBook}" />
+		</h:form>
+
+		<h:outputLabel value="#{homeForm.title}" />
+		<h:outputLabel value="#{homeForm.numberBooks}" />
 	</h:body>
 </html>
