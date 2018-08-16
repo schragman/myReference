@@ -12,7 +12,7 @@ import entities.Book;
 
 @Stateless
 @LocalBean
-public class BookEJB implements BookEJBRemote {
+public class BookBean implements BookBeanRemote {
 
 	@PersistenceContext(unitName = "myRefDB")
 	private EntityManager em;

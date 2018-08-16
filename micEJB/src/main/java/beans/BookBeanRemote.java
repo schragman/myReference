@@ -7,7 +7,7 @@ import javax.ejb.Remote;
 import entities.Book;
 
 @Remote
-public interface BookEJBRemote {
+public interface BookBeanRemote {
 
 	List<Book> findBooks();
 	Book findBookById(Long id);

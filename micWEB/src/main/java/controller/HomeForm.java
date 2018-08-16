@@ -9,7 +9,7 @@ import javax.faces.event.ActionEvent;
 import javax.inject.Named;
 
 import beans.Ausgabe;
-import beans.BookEJBRemote;
+import beans.BookBeanRemote;
 import entities.Book;
 
 @SessionScoped
@@ -22,7 +22,7 @@ public class HomeForm implements Serializable{
 	private Ausgabe ausgabe;
 
 	@EJB
-	private BookEJBRemote bookEJB;
+	private BookBeanRemote bookEJB;
 
 	public String getBeispielWert() {
 		System.out.println("Ausgabe Controller-Bean");
