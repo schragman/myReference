@@ -30,6 +30,9 @@ public class Book implements Serializable {
 	private Integer nbOfPage;
 	private Boolean illustrations;
 
+	public Long getId() {
+		return id;
+	}
 	public String getTitle() {
 		return title;
 	}
