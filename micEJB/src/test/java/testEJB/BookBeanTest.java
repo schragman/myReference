@@ -12,6 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import beans.BookBean;
+import beans.BookBeanRemote;
 import entities.Book;
 
 public class BookBeanTest {
@@ -42,7 +43,7 @@ public class BookBeanTest {
 		book.setIllustrations(false);
 
 		//Look up the EJB
-		BookBean bookBean = (BookBean) ctx.lookup("java:global/classes/BookBean");
+		BookBean bookBean = (BookBean) ctx.lookup("java:global/micEJB/BookBean");
 
 		//Persists the book to the database
 		book = bookBean.createBook(book);
