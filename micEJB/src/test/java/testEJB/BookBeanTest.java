@@ -42,7 +42,7 @@ public class BookBeanTest {
 		book.setIllustrations(false);
 
 		//Look up the EJB
-		BookBean bookBean = (BookBean) ctx.lookup("java:global/lookup-of-ejbs/BookBean");
+		BookBean bookBean = (BookBean) ctx.lookup("java:global/classes/BookBean");
 
 		//Persists the book to the database
 		book = bookBean.createBook(book);
