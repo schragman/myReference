@@ -6,7 +6,7 @@
 	version="2.0">
 
 
-	<persistence-unit name="myRefDB" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="myTestRefDB" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>main.java.Book</class>
 		<properties>
