@@ -3,6 +3,7 @@ package testEJB;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
+import java.util.Properties;
 
 import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
@@ -22,7 +23,16 @@ public class BookBeanTest {
 
 	@BeforeClass
 	public static void initContainer() throws Exception {
-		ec = EJBContainer.createEJBContainer();
+		Properties p = new Properties();
+		p.put("/My_Derby_Database", "new://Resource?type=DataSource");
+		p.put("/My_Derby_Database.JdbcDriver", "org.apache.derby.jdbc.EmbeddedDriver");
+		p.put("/My_Derby_Database.JdbcUrl", "jdbc:derby:memory:myTestRefDB;create=true");
+//		p.put("/My_Derby_Database.JdbcDriver", "org.apache.derby.jdbc.ClientDriver");
+//		p.put("/My_Derby_Database.JdbcUrl", "jdbc:derby://localhost:1527/myTestRefDB;create=true");
+		p.put("/My_Derby_Database.UserName", "APP");
+		p.put("/My_Derby_Database.Password", "APP");
+						
+		ec = EJBContainer.createEJBContainer(p);
 		ctx = ec.getContext();
 	}
 
