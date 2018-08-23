@@ -13,7 +13,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import beans.BookBean;
-import beans.BookBeanRemote;
 import entities.Book;
 
 public class BookBeanTest {
@@ -24,14 +23,14 @@ public class BookBeanTest {
 	@BeforeClass
 	public static void initContainer() throws Exception {
 		Properties p = new Properties();
-		p.put("/My_Derby_Database", "new://Resource?type=DataSource");
-		p.put("/My_Derby_Database.JdbcDriver", "org.apache.derby.jdbc.EmbeddedDriver");
-		p.put("/My_Derby_Database.JdbcUrl", "jdbc:derby:memory:myTestRefDB;create=true");
-//		p.put("/My_Derby_Database.JdbcDriver", "org.apache.derby.jdbc.ClientDriver");
-//		p.put("/My_Derby_Database.JdbcUrl", "jdbc:derby://localhost:1527/myTestRefDB;create=true");
-		p.put("/My_Derby_Database.UserName", "APP");
-		p.put("/My_Derby_Database.Password", "APP");
-						
+		p.put("/myRefDS", "new://Resource?type=DataSource");
+		p.put("/myRefDS.JdbcDriver", "org.apache.derby.jdbc.EmbeddedDriver");
+		p.put("/myRefDS.JdbcUrl", "jdbc:derby:memory:myTestRefDB;create=true");
+//		p.put("/myRefDS.JdbcDriver", "org.apache.derby.jdbc.ClientDriver");
+//		p.put("/myRefDS.JdbcUrl", "jdbc:derby://localhost:1527/myTestRefDB;create=true");
+		p.put("/myRefDS.UserName", "APP");
+		p.put("/myRefDS.Password", "APP");
+
 		ec = EJBContainer.createEJBContainer(p);
 		ctx = ec.getContext();
 	}

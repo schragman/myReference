@@ -14,7 +14,7 @@ import entities.Book;
 @LocalBean
 public class BookBean implements BookBeanRemote {
 
-	@PersistenceContext(unitName = "myRefDB")
+	@PersistenceContext(unitName = "myRefPU")
 	private EntityManager em;
 
 	@Override
