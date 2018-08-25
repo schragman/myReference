@@ -9,6 +9,7 @@ import javax.faces.event.ActionEvent;
 import javax.inject.Named;
 
 import beans.Ausgabe;
+import beans.AusgabeEJB2;
 import beans.BookBeanRemote;
 import entities.Book;
 
@@ -20,6 +21,8 @@ public class HomeForm implements Serializable{
 
 	@EJB
 	private Ausgabe ausgabe;
+	@EJB
+	private AusgabeEJB2 ausgabe2;
 
 	@EJB
 	private BookBeanRemote bookEJB;
@@ -27,6 +30,10 @@ public class HomeForm implements Serializable{
 	public String getBeispielWert() {
 		System.out.println("Ausgabe Controller-Bean");
 		return ausgabe.getBeispielText();
+	}
+
+	public String getBeispiel2() {
+		return ausgabe2.getBeispielText();
 	}
 
 	public void doCreateBook(ActionEvent event) {

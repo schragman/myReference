@@ -1,10 +1,9 @@
 package beans;
 
 import javax.ejb.Local;
-import javax.ejb.Remote;
 
 @Local
-public interface Ausgabe {
+public interface Ausgabe2 {
 	String getBeispielText();
 
 }
