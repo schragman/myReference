@@ -45,7 +45,7 @@ public class HomeForm implements Serializable{
 		book.setNbOfPage(512);
 		book.setIllustrations(false);
 
-		bookEJB.createBook(book);
+		book = bookEJB.createBook(book);
 
 		book.setTitle("HDW");
 		bookEJB.updateBook(book);
@@ -68,6 +68,10 @@ public class HomeForm implements Serializable{
 	public int getNumberBooks() {
 		List<Book> bookList = bookEJB.findBooks();
 		return bookList.size();
+	}
+	
+	public List<Book> getBookList() {
+		return bookEJB.findBooks();
 	}
 
 }
