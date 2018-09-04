@@ -28,10 +28,10 @@ public class BookController {
 		FacesContext ctx = FacesContext.getCurrentInstance();
 
 		if (book.getIsbn()==null || "".equals(book.getIsbn())) {
-//				ctx.addMessage(bookForm:isbn, new FacesMessage(FacesMessage.SEVERITY_WARN,
-//						"Wrong ISBN", "You should enter an ISBN number"));
-			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,
-				"Wrong ISBN", "You should enter an ISBN number"));
+				ctx.addMessage("bookForm:isbn", new FacesMessage(FacesMessage.SEVERITY_WARN,
+						"Wrong ISBN", "You should enter an ISBN number"));
+//			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,
+//				"Wrong ISBN", "You should enter an ISBN number"));
 			returnPage=null;
 		} else {
 			bookEJB.createBook(book);

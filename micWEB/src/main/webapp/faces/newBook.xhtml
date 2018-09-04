@@ -15,22 +15,27 @@
 		<hr/>
 		<h:form id="bookForm">
 			<h:messages/>
-			<h:panelGrid columns="2">
+			<h:panelGrid columns="3">
 				<h:outputLabel value="ISBN: "/>
 				<h:inputText id="isbn" value="#{bookController.book.isbn}"/>
+				<h:message for="isbn"/>
 
 				<h:outputLabel value="Title: "/>
 				<h:inputText value="#{bookController.book.title}"/>
+				<br />
 
 				<h:outputLabel value="Price: "/>
 				<h:inputText value="#{bookController.book.price}"/>
+				<br />
 
 				<h:outputLabel value="Description: "/>
 				<h:inputTextarea value="#{bookController.book.description}"
 					cols="5" rows="5" />
+				<br />
 
 				<h:outputLabel value="Number of Pages: "/>
 				<h:inputText value="#{bookController.book.nbOfPage}"/>
+				<br />
 
 				<h:outputLabel value="Illustrations: "/>
 				<h:selectBooleanCheckbox value="#{bookController.book.illustrations}"/>
