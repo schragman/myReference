@@ -36,19 +36,8 @@ public class HomeForm implements Serializable{
 		return ausgabe2.getBeispielText();
 	}
 
-	public void doCreateBook(ActionEvent event) {
-		Book book = new Book();
-		book.setTitle("Herr der Welten");
-		book.setPrice(10F);
-		book.setDescription("One of the best SciFi-Books");
-		book.setIsbn("1-84383-332-2");
-		book.setNbOfPage(512);
-		book.setIllustrations(false);
-
-		book = bookEJB.createBook(book);
-
-		book.setTitle("HDW");
-		bookEJB.updateBook(book);
+	public String doCreateBook() {
+		return "newBook";
 	}
 
 	public String getTitle() {
@@ -69,7 +58,7 @@ public class HomeForm implements Serializable{
 		List<Book> bookList = bookEJB.findBooks();
 		return bookList.size();
 	}
-	
+
 	public List<Book> getBookList() {
 		return bookEJB.findBooks();
 	}
