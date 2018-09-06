@@ -24,7 +24,8 @@
 				<h:inputText value="#{bookController.book.title}"/>
 				<br />
 
-				<h:outputLabel value="Price: "/>
+				<h:outputLabel value="Price: "
+				binding="#{bookController.preis}"/>
 				<h:inputText value="#{bookController.book.price}"/>
 				<br />
 
@@ -44,6 +45,10 @@
 
 			<h:commandButton value="Create a book"
 				action="#{bookController.doCreateBook}" />
+
+			<h:commandButton value="Test Binding"
+				actionListerner="#{bookController.doTestBinding}" />
+
 		</h:form>
 	</h:body>
 </html>

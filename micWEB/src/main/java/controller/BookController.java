@@ -3,7 +3,9 @@ package controller;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.component.UIOutput;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 import javax.inject.Named;
 
 import beans.BookBean;
@@ -16,6 +18,18 @@ public class BookController {
 	private BookBean bookEJB;
 
 	private Book book = new Book();
+
+	private UIOutput preis;
+
+	public UIOutput getPreis() {
+		return preis;
+	}
+
+
+	public void setPreis(UIOutput preis) {
+		this.preis = preis;
+	}
+
 
 	public Book getBook() {
 		return book;
@@ -38,6 +52,10 @@ public class BookController {
 			returnPage="home";
 		}
 		return returnPage;
+	}
+
+	public void doTestBinding(ActionEvent pvEvent) {
+		preis.setValue("mein Preis");
 	}
 
 
