@@ -19,6 +19,8 @@
 		<p/>
 		<h:outputText value="#{homeForm.beispiel2}" />
 		<p/>
+		<h:outputLabel value="Test Binding II" 
+						binding="#{bookController.myOutput}"/>
 
 		<h:dataTable value="#{homeForm.bookList}" var="bk">
 			<h:column>
@@ -42,9 +44,9 @@
 				<h:outputText value="#{bk.price}" />
 			</h:column>
 
-			<h:column>
+			<h:column binding="#{bookController.myColumn}">
 				<f:facet name="header">
-					<h:outputText value="Description"/>
+					<h:outputText id="thisOne" value="Description"/>
 				</f:facet>
 				<h:outputText value="#{bk.description}" />
 			</h:column>
@@ -68,8 +70,9 @@
 		<h:form>
 			<h:commandLink value="Create Book"
 								action="#{homeForm.doCreateBook}" />
+			<h:commandButton value="test Binding" action="#{bookController.doChangeHome}" />
 		</h:form>
-
+		
 
 	</h:body>
 </html>

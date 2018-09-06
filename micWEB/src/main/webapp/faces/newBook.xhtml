@@ -45,7 +45,8 @@
 				action="#{bookController.doCreateBook}" />
 
 			<h:commandButton value="Test Binding"
-				actionListerner="#{bookController.doTestBinding}" />
+				binding="#{bookController.myButton}"
+				action="#{bookController.doTestBinding}" />
 
 		</h:form>
 	</h:body>
