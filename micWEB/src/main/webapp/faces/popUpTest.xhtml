@@ -4,9 +4,31 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:tc="http://myfaces.apache.org/tobago/component"
   	  xmlns:ui="http://java.sun.com/jsf/facelets">
-  	  
+
   	  <tc:page>
   	  	<h1>Willkommen zu Popup Test</h1>
-  	  </tc:page>
-  	  
+
+
+	  	  <tc:popup id="myPopup">
+	  	  	<tc:box label="Das ist die Popup-Box">
+	  	  		<tc:out label="Inhalt der Box" />
+	  	  		<tc:in label="Eingabe:" value="#{homeTobago.myEingabe}" />
+	  	  		<tc:button label="Cancel">
+	  	  			<tc:operation name="hide" for="myPopup" />
+	  	  		</tc:button>
+
+	  	  		<tc:button label="Ok" actionListener="#{homeTobago.doChangeOperation}">
+	  	  			<tc:operation name="show" for="myPopup"
+	  	  				binding="#{homeTobago.myOperation}"/>
+	  	  		</tc:button>
+
+	  	  	</tc:box>
+	  	  </tc:popup>
+
+	  	  <tc:button label="Popup öffnen">
+	  	  	<tc:out label="Hier gehts zum Popup" />
+	  	  	<tc:operation name="show" for="myPopup" />
+	  	  </tc:button>
+	  </tc:page>
+
 </f:view>
