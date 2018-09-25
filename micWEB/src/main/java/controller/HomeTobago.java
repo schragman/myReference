@@ -5,6 +5,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.inject.Named;
 
+import org.apache.myfaces.tobago.component.UIButton;
 import org.apache.myfaces.tobago.component.UIOperation;
 
 @RequestScoped
@@ -12,6 +13,8 @@ import org.apache.myfaces.tobago.component.UIOperation;
 public class HomeTobago {
 
 	private String myEingabe;
+	
+	private UIButton myButton;
 
 	private UIOperation myOperation;
 
@@ -39,7 +42,8 @@ public class HomeTobago {
 
 		myOperation.setName("hide");
 		myOperation.setFor("myPopup");
-
+		
+		
 		FacesContext fc = FacesContext.getCurrentInstance();
 
 	}
