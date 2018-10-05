@@ -9,6 +9,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -40,6 +41,23 @@ public class BookRestController extends Application{
 
 		return Response.ok(book).build();
 		//return "say Michael";
+	}
+
+	//http://localhost:8080/ReferenceII/rest/books/id?bookId=2
+	@GET
+	@Path("id/")
+	public Response getRestBookById(@QueryParam("bookId") Long id) {
+		Book book = bookBean.findBookById(id);
+		return Response.ok(book).build();
+	}
+
+	//http://localhost:8080/ReferenceII/rest/books/jid?bookId=2
+	@Produces(MediaType.APPLICATION_JSON)
+	@GET
+	@Path("jid/")
+	public Response getJasonBookById(@QueryParam("bookId") Long id) {
+		Book book = bookBean.findBookById(id);
+		return Response.ok(book).build();
 	}
 
 }
